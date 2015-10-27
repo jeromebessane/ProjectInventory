@@ -1,4 +1,4 @@
-package org.orange.web;
+package org.orange.metier;
 
 public class User {
 	
