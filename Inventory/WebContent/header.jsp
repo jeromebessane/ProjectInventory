@@ -1,4 +1,4 @@
-<%@page import="org.orange.web.User"%>
+<%@page import="org.orange.metier.bean.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -13,16 +13,16 @@
 		    <div>
 		      <ul class="nav navbar-nav">
 		        <li class="active"><a href="<%=request.getContextPath()%>">Home</a></li>
-		        <li><a href="#">Page 1</a></li>
+		        <li><a href="<%=request.getContextPath()%>/equipments">Equipments</a></li>
 		        <li><a href="#">Page 2</a></li> 
 		        <li><a href="#">Page 3</a></li> 
 		      </ul>
 		      
-		       <form class="navbar-form navbar-left" role="search">
+		       <form class="navbar-form navbar-left" role="search" action="equipments" method="post">
 		        <div class="form-group">
-		          <input type="text" class="form-control" placeholder="Search">
+		          <input type="text" class="form-control" placeholder="Search" name="tag" value="${model.tag}">
 		        </div>
-		        <button type="submit" class="btn btn-default">Search</button>
+		        <button type="submit" class="btn btn-default" value="Search">Search</button>
 		      </form>
 		      
       		<% if(request.getSession().getAttribute("user") == null){ %>
@@ -43,7 +43,7 @@
 												<div class="form-group">
 													 <label class="sr-only">Password</label>
 													 <input type="password" name="password" class="form-control" placeholder="Password" required>
-		                                             <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+		                                             <div class="help-block text-right"><a href="<%=request.getContextPath()%>/forget-password">Forget the password ?</a></div>
 												</div>
 												<div class="form-group">
 													 <button type="submit" class="btn btn-primary btn-block" value="connexion">Sign in</button>
@@ -86,12 +86,12 @@
 						</li>
 					</ul>
 		        </li>
-		      </ul>	
-		     <%  } %>
-		      
+		      </ul>	    
+		     <%  } %>		      
 		    </div>
 		  </div>
 		</nav>
+		<div class="message-error"><p>${message}</p></div>
 	</head>  
 	<body> 
 	</body>

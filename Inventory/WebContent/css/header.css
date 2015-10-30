@@ -46,3 +46,7 @@ body{
         border-top:0 none;
     }
 }
+.message-error{
+    color: red;
+    text-align: right;
+}

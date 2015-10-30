@@ -1,14 +1,22 @@
 package org.orange.web.servlet;
 
 import java.io.IOException;
+import java.util.List;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.orange.web.User;
+import org.orange.metier.IUser;
+import org.orange.metier.ImplementationListEquipment;
+import org.orange.metier.ImplementationUser;
+import org.orange.metier.bean.Equipment;
+import org.orange.metier.bean.User;
+import org.orange.web.model.EquipmentModele;
+import org.orange.web.model.UserModele;
 
 /**
  * Servlet implementation class LoginServlet
@@ -16,6 +24,7 @@ import org.orange.web.User;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private IUser implUser;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -24,6 +33,13 @@ public class LoginServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+	/**
+	 * @see Servlet#init(ServletConfig)
+	 */
+	public void init(ServletConfig config) throws ServletException {
+		implUser=new ImplementationUser();
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -40,15 +56,28 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		       
 		if(!login.isEmpty() && !password.isEmpty()){
-		   User currentUser = new User();
-		   currentUser.setLogin(login);
-		   currentUser.setPassword(password);
-		          
-		   request.getSession().setAttribute("user", currentUser);
-		   request.getRequestDispatcher("home.jsp").forward(request, response);
-		          
-		} else {
-		   response.sendRedirect("login.jsp");
+			UserModele modUser = new UserModele();//create instance model
+			modUser.setLogin(login);//store data request in model
+			modUser.setPassword(password);
+			User currentUser = implUser.getUserValidate(login, password);//recovery results with metier part
+			modUser.setUser(currentUser);//store result in model
+			
+			if(currentUser==null){
+				//if password or login is empty
+				String message = "Wrong login or password";
+				request.setAttribute("message", message);
+				request.getRequestDispatcher("/home.jsp").forward(request, response);
+				
+			}else{		         
+				request.getSession().setAttribute("user", currentUser);
+				request.getRequestDispatcher("home.jsp").forward(request, response);
+			}
+			
+		}else {
+				//if password or login is empty
+				String message = "Empty login or password";
+				request.setAttribute("message", message);
+				request.getRequestDispatcher("/home.jsp").forward(request, response);
 		}
 	}
 
