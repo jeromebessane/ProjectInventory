@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.PreparedStatement;
 
+import org.orange.metier.bean.Equipment;
+
 public class ImplementationListEquipment implements IListEquipment{
 
 	@Override

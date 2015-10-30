@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.orange.metier.Equipment;
 import org.orange.metier.IListEquipment;
 import org.orange.metier.ImplementationListEquipment;
+import org.orange.metier.bean.Equipment;
 import org.orange.web.model.EquipmentModele;
 
 /**
@@ -21,7 +21,7 @@ import org.orange.web.model.EquipmentModele;
 @WebServlet("/EquipmentServlet")
 public class EquipmentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private IListEquipment metierEquip;
+	private IListEquipment implEquip;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -35,7 +35,7 @@ public class EquipmentServlet extends HttpServlet {
 	 * @see Servlet#init(ServletConfig)
 	 */
 	public void init(ServletConfig config) throws ServletException {
-		metierEquip=new ImplementationListEquipment();
+		implEquip=new ImplementationListEquipment();
 	}
 
 	/**
@@ -43,7 +43,7 @@ public class EquipmentServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		EquipmentModele modEquip = new EquipmentModele();//create instance model
-		List<Equipment> listEquips = metierEquip.getEquipments();//recovery results with metier part
+		List<Equipment> listEquips = implEquip.getEquipments();//recovery results with metier part
 		modEquip.setListEquips(listEquips);//store result in model
 		//store model in request
 		request.setAttribute("model", modEquip);//name model for the jsp
@@ -58,7 +58,7 @@ public class EquipmentServlet extends HttpServlet {
 		String tag = request.getParameter("tag");//read data request
 		EquipmentModele modEquip = new EquipmentModele();//create instance model
 		modEquip.setTag(tag);//store data request in model
-		List<Equipment> listEquips = metierEquip.getEquipmentsWithTag(tag);//recovery results with metier part
+		List<Equipment> listEquips = implEquip.getEquipmentsWithTag(tag);//recovery results with metier part
 		modEquip.setListEquips(listEquips);//store result in model
 		//store model in request
 		request.setAttribute("model", modEquip);//name model for the jsp

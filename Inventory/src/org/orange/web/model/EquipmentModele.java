@@ -3,7 +3,7 @@ package org.orange.web.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.orange.metier.Equipment;
+import org.orange.metier.bean.Equipment;
 
 public class EquipmentModele {
 	

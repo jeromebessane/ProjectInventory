@@ -1,4 +1,4 @@
-<%@page import="org.orange.metier.User"%>
+<%@page import="org.orange.metier.bean.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -43,7 +43,7 @@
 												<div class="form-group">
 													 <label class="sr-only">Password</label>
 													 <input type="password" name="password" class="form-control" placeholder="Password" required>
-		                                             <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+		                                             <div class="help-block text-right"><a href="<%=request.getContextPath()%>/forget-password">Forget the password ?</a></div>
 												</div>
 												<div class="form-group">
 													 <button type="submit" class="btn btn-primary btn-block" value="connexion">Sign in</button>
@@ -86,12 +86,12 @@
 						</li>
 					</ul>
 		        </li>
-		      </ul>	
-		     <%  } %>
-		      
+		      </ul>	    
+		     <%  } %>		      
 		    </div>
 		  </div>
 		</nav>
+		<div class="message-error"><p>${message}</p></div>
 	</head>  
 	<body> 
 	</body>

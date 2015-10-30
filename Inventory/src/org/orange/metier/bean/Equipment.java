@@ -1,4 +1,4 @@
-package org.orange.metier;
+package org.orange.metier.bean;
 
 import java.io.Serializable;
 import java.util.Date;
