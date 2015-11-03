@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.orange.metier.IUser;
-import org.orange.metier.ImplementationListEquipment;
+import org.orange.metier.ImplementationEquipment;
 import org.orange.metier.ImplementationUser;
 import org.orange.metier.bean.Equipment;
 import org.orange.metier.bean.User;
-import org.orange.web.model.EquipmentModele;
-import org.orange.web.model.UserModele;
+import org.orange.web.model.EquipmentModel;
+import org.orange.web.model.UserModel;
 
 /**
  * Servlet implementation class LoginServlet
@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		       
 		if(!login.isEmpty() && !password.isEmpty()){
-			UserModele modUser = new UserModele();//create instance model
+			UserModel modUser = new UserModel();//create instance model
 			modUser.setLogin(login);//store data request in model
 			modUser.setPassword(password);
 			User currentUser = implUser.getUserValidate(login, password);//recovery results with metier part

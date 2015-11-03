@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.orange.metier.bean.Equipment;
 
-public interface IListEquipment {
+public interface IEquipment {
 	public List<Equipment> getEquipmentsWithTag(String tag);
 	public List<Equipment> getEquipments();
 	public void addEquipment(Equipment equip);

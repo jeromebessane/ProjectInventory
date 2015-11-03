@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 
 import org.orange.metier.bean.Equipment;
 
-public class ImplementationListEquipment implements IListEquipment{
+public class ImplementationEquipment implements IEquipment{
 
 	@Override
 	public List<Equipment> getEquipmentsWithTag(String tag) {
