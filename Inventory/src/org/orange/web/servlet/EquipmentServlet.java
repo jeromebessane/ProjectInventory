@@ -10,10 +10,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.orange.metier.IListEquipment;
-import org.orange.metier.ImplementationListEquipment;
+import org.orange.metier.IEquipment;
+import org.orange.metier.IFilter;
+import org.orange.metier.ImplementationEquipment;
+import org.orange.metier.ImplementationFilter;
 import org.orange.metier.bean.Equipment;
-import org.orange.web.model.EquipmentModele;
+import org.orange.web.model.EquipmentModel;
 
 /**
  * Servlet implementation class EquipmentServlet
@@ -21,7 +23,9 @@ import org.orange.web.model.EquipmentModele;
 @WebServlet("/EquipmentServlet")
 public class EquipmentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private IListEquipment implEquip;
+	private IEquipment implEquip;
+	private IFilter implFilter;
+	private EquipmentModel model;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -35,18 +39,23 @@ public class EquipmentServlet extends HttpServlet {
 	 * @see Servlet#init(ServletConfig)
 	 */
 	public void init(ServletConfig config) throws ServletException {
-		implEquip=new ImplementationListEquipment();
+		implEquip=new ImplementationEquipment();
+		implFilter=new ImplementationFilter();
+		model = new EquipmentModel();//create instance model
 	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		EquipmentModele modEquip = new EquipmentModele();//create instance model
+		//for list equipments
 		List<Equipment> listEquips = implEquip.getEquipments();//recovery results with metier part
-		modEquip.setListEquips(listEquips);//store result in model
+		model.setListEquips(listEquips);//store result in model
+		//for filter
+		List<List<String>> listFilter = implFilter.getListFilter();//recovery results with metier part
+		model.setListFilterr(listFilter);//store result in model
 		//store model in request
-		request.setAttribute("model", modEquip);//name model for the jsp
+		request.setAttribute("model", model);//name model for the jsp
 		//send result --> view
 		request.getRequestDispatcher("listEquipments.jsp").forward(request, response);
 	}
@@ -55,13 +64,16 @@ public class EquipmentServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//for list equipments
 		String tag = request.getParameter("tag");//read data request
-		EquipmentModele modEquip = new EquipmentModele();//create instance model
-		modEquip.setTag(tag);//store data request in model
+		model.setTag(tag);//store data request in model
 		List<Equipment> listEquips = implEquip.getEquipmentsWithTag(tag);//recovery results with metier part
-		modEquip.setListEquips(listEquips);//store result in model
+		model.setListEquips(listEquips);//store result in model
+		//for filter
+		List<List<String>> listFilter = implFilter.getListFilter();//recovery results with metier part
+		model.setListFilterr(listFilter);//store result in model
 		//store model in request
-		request.setAttribute("model", modEquip);//name model for the jsp
+		request.setAttribute("model", model);//name model for the jsp
 		//send result --> view
 		request.getRequestDispatcher("listEquipments.jsp").forward(request, response);
 	}

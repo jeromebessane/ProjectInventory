@@ -5,11 +5,18 @@ import java.util.List;
 
 import org.orange.metier.bean.Equipment;
 
-public class EquipmentModele {
+public class EquipmentModel {
 	
 	private String tag;
 	private List<Equipment> listEquips=new ArrayList<>();
+	private List<List<String>> listFilter=new ArrayList<>();
 	
+	public List<List<String>> getListFilter() {
+		return listFilter;
+	}
+	public void setListFilterr(List<List<String>> listFilter) {
+		this.listFilter = listFilter;
+	}
 	public String getTag() {
 		return tag;
 	}

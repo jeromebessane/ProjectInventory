@@ -2,7 +2,7 @@ package org.orange.web.model;
 
 import org.orange.metier.bean.User;
 
-public class UserModele {
+public class UserModel {
 	
 	private String login;
 	private String password;
