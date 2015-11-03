@@ -1,0 +1,42 @@
+@media (min-width: 768px) {
+.container {
+	width: 750px;
+	}
+}
+
+@media (min-width : 992px) {
+.container {
+	width: 970px;
+	}
+}
+
+@media (min width : 1170px) {
+.container {
+	width: 1170px;
+	}
+}
+
+body {
+  padding-top: 10px;
+}
+
+h2 {
+	text-align: center;
+	color: #FF6600;
+	padding-bottom: 20px;
+}
+
+img {
+	border: 2px solid #FF6600;
+}
+
+a {
+	color: #FF6600;
+}
+
+[class*="col-"], footer {
+  /*line-height: 195px;*/
+  text-align: center;
+  padding-top: 10px;
+  min-height: 100%;
+}
