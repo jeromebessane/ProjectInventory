@@ -36,4 +36,12 @@
     <servlet-name>homeServlet</servlet-name>
     <url-pattern>/home</url-pattern>
   </servlet-mapping>
+    <servlet>
+    <servlet-name>addEquipServlet</servlet-name>
+    <servlet-class>org.orange.web.servlet.AddEquipmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addEquipServlet</servlet-name>
+    <url-pattern>/add-equipment</url-pattern>
+  </servlet-mapping>
 </web-app>
