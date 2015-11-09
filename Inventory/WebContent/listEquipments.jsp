@@ -16,24 +16,27 @@
 		</div>
 		<div class="col-sm-10 col-md-10">
 			<div class="table-responsive">
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>id</th>
-							<th>Type</th>
-							<th>Constructor</th>
-							<th>Model</th>
-						</tr>
-					</thead>
-					<c:forEach items="${model.listEquips}" var="equip">
-						<tr>
-							<td>${equip.idEquipment}</td>
-							<td>${equip.typeEquipment}</td>
-							<td>${equip.constructorEquipment}</td>
-							<td>${equip.modelEquipment}</td>
-						</tr>
-					</c:forEach>
-				</table>
+				<form action="equipments/show" method="post">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>id</th>
+								<th>Type</th>
+								<th>Constructor</th>
+								<th>Model</th>
+							</tr>
+						</thead>
+						<c:forEach items="${model.listEquips}" var="equip">
+							<tr onclick="this.form.submit();">					
+								<td>${equip.idEquipment}</td>
+								<td>${equip.typeEquipment}</td>
+								<td>${equip.constructorEquipment}</td>
+								<td>${equip.modelEquipment}</td>
+								<td><button type="submit" name="equip" value="${equip.idEquipment}">more</button></td>																			
+							</tr>
+						</c:forEach>
+					</table>
+				</form>	
 			</div>
 		</div>
 	</div>
