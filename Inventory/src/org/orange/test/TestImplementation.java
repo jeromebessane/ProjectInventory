@@ -13,7 +13,10 @@ public class TestImplementation {
 
 	public static void main(String[] args) {
 		
-		testGetListFilter();
+		//testGetEquipmentsWithFilter();
+		//testGetTypesEquipments();
+		//testGetLastEquipments();
+		//testGetListFilter();
 		//testGetListFilter();
 		//testCheckUser();
 		//testGetEquipments();
@@ -64,4 +67,38 @@ public class TestImplementation {
 		}
 	}
 
+
+	private static void testGetEquipmentsWithFilter(){
+		List<String> constructeur=new ArrayList<String>();
+		//constructeur.add("Cisco");
+		constructeur.add("Tandberg");
+		List<String> type=new ArrayList<String>();
+		type.add("Telephone IP");
+		List<String> status=new ArrayList<String>();
+		List<String> localisation=new ArrayList<String>();
+		ImplementationEquipment impl = new ImplementationEquipment();
+		List<Equipment> listEquips = impl.getEquipmentsWithFilter(constructeur, type, status, localisation);
+		for(Equipment equip:listEquips){
+			System.out.println(equip.getConstructorEquipment());
+			System.out.println(equip.getTypeEquipment());
+		}
+	}
+
+
+	private static void testGetLastEquipments(){
+		ImplementationEquipment impl = new ImplementationEquipment();
+		List<Equipment> listEquips = impl.getLastEquipments();
+		for(Equipment equip:listEquips){
+			System.out.println(equip.getModelEquipment());
+		}
+	}
+		
+	private static void testGetTypesEquipments(){
+		ImplementationEquipment impl = new ImplementationEquipment();
+		List<Equipment> listEquips = impl.getTypesEquipments();
+		for(Equipment equip:listEquips){
+		System.out.println(equip.getTypeEquipment());
+		}	
+	}
 }
+
