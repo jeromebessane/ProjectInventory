@@ -10,4 +10,6 @@ public interface IEquipment {
 	public List<Equipment> getEquipments();
 	public Equipment getEquipmentWithId(int id);
 	public void addEquipment(Equipment equip);
+	public List<Equipment> getLastEquipments();
+	public List<Equipment> getTypesEquipments();
 }
