@@ -14,7 +14,7 @@
 		      <ul class="nav navbar-nav">
 		        <li class="active"><a href="<%=request.getContextPath()%>">Home</a></li>
 		        <li><a href="<%=request.getContextPath()%>/equipments">Equipments</a></li>
-		        <li><a href="#">Page 2</a></li> 
+		        <li><a href="<%=request.getContextPath()%>/add-equipment">Add</a></li> 
 		        <li><a href="#">Page 3</a></li> 
 		      </ul>
 		      
