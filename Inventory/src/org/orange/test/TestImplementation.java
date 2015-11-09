@@ -13,7 +13,9 @@ public class TestImplementation {
 
 	public static void main(String[] args) {
 		
-		testGetListFilter();
+		testGetTypesEquipments();
+		//testGetLastEquipments();
+		//testGetListFilter();
 		//testGetListFilter();
 		//testCheckUser();
 		//testGetEquipments();
@@ -64,4 +66,19 @@ public class TestImplementation {
 		}
 	}
 
+	private static void testGetLastEquipments(){
+		ImplementationEquipment impl = new ImplementationEquipment();
+		List<Equipment> listEquips = impl.getLastEquipments();
+		for(Equipment equip:listEquips){
+			System.out.println(equip.getModelEquipment());
+		}
+	}
+		
+	private static void testGetTypesEquipments(){
+		ImplementationEquipment impl = new ImplementationEquipment();
+		List<Equipment> listEquips = impl.getTypesEquipments();
+		for(Equipment equip:listEquips){
+		System.out.println(equip.getTypeEquipment());
+		}	
+	}
 }

@@ -8,4 +8,6 @@ public interface IEquipment {
 	public List<Equipment> getEquipmentsWithTag(String tag);
 	public List<Equipment> getEquipments();
 	public void addEquipment(Equipment equip);
+	public List<Equipment> getLastEquipments();
+	public List<Equipment> getTypesEquipments();
 }
