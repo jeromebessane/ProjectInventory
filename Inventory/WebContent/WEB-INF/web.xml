@@ -4,7 +4,6 @@
   <welcome-file-list>
     <welcome-file>home.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
     <servlet-name>equipServlet</servlet-name>
     <servlet-class>org.orange.web.servlet.EquipmentServlet</servlet-class>
@@ -13,7 +12,6 @@
     <servlet-name>equipServlet</servlet-name>
     <url-pattern>/equipments</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>fPasswordServlet</servlet-name>
     <servlet-class>org.orange.web.servlet.ForgetPasswordServlet</servlet-class>
@@ -22,5 +20,12 @@
     <servlet-name>fPasswordServlet</servlet-name>
     <url-pattern>/forget-password</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <servlet-name>showEquipmentServlet</servlet-name>
+    <servlet-class>org.orange.web.servlet.ShowEquipmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>showEquipmentServlet</servlet-name>
+    <url-pattern>/equipments/show</url-pattern>
+  </servlet-mapping>
 </web-app>

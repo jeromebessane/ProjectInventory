@@ -67,11 +67,11 @@ public class ImplementationFilter implements IFilter {
 			//for field statut
 			listField = new ArrayList<String>();
 			prepStat = connection.prepareStatement
-					("SELECT DISTINCT Statut FROM equipment;");		
+					("SELECT DISTINCT Status FROM equipment;");		
 			resSet = prepStat.executeQuery();//recovery results
 			//for each line store result in list of statut
 			while(resSet.next()){
-				result=resSet.getString("Statut");
+				result=resSet.getString("Status");
 				listField.add(result);//add statut in list
 			}
 			listFilter.add(listField);//add list of statut in list of lists

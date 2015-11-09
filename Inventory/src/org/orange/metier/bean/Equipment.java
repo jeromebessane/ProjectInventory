@@ -1,9 +1,8 @@
 package org.orange.metier.bean;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class Equipment implements Serializable{
+public class Equipment {
 	
 	public Equipment() {
 		super();
@@ -11,10 +10,10 @@ public class Equipment implements Serializable{
 	public Equipment(String typeEquipment, String constructorEquipment,
 			String modelEquipment, String snEquipment, String pnEquipment,
 			String licenseEquipment, String localisationEquipment,
-			String supervisorEquipment, String statutEquipment,
-			String adressIpEquipment, String nameEquipment,
-			String proprietaryEquipment, String accessoriesEquipment,
-			Date dateEquipment) {
+			String supervisorEquipment, String stateEquipment,
+			String statusEquipment, String adressIpEquipment, 
+			String nameEquipment, String accessoriesEquipment,
+			Boolean proprietaryEquipment, Date dateEquipment) {
 		super();
 		this.typeEquipment = typeEquipment;
 		this.constructorEquipment = constructorEquipment;
@@ -24,7 +23,8 @@ public class Equipment implements Serializable{
 		this.licenseEquipment = licenseEquipment;
 		this.localisationEquipment = localisationEquipment;
 		this.supervisorEquipment = supervisorEquipment;
-		this.statutEquipment = statutEquipment;
+		this.stateEquipment = stateEquipment;
+		this.statusEquipment = statusEquipment;
 		this.adressIpEquipment = adressIpEquipment;
 		this.nameEquipment = nameEquipment;
 		this.proprietaryEquipment = proprietaryEquipment;
@@ -85,11 +85,17 @@ public class Equipment implements Serializable{
 	public void setSupervisorEquipment(String supervisorEquipment) {
 		this.supervisorEquipment = supervisorEquipment;
 	}
-	public String getStatutEquipment() {
-		return statutEquipment;
+	public String getStateEquipment() {
+		return stateEquipment;
 	}
-	public void setStatutEquipment(String statutEquipment) {
-		this.statutEquipment = statutEquipment;
+	public void setStateEquipment(String stateEquipment) {
+		this.stateEquipment = stateEquipment;
+	}
+	public String getStatusEquipment() {
+		return statusEquipment;
+	}
+	public void setStatusEquipment(String statusEquipment) {
+		this.statusEquipment = statusEquipment;
 	}
 	public String getAdressIpEquipment() {
 		return adressIpEquipment;
@@ -103,10 +109,10 @@ public class Equipment implements Serializable{
 	public void setNameEquipment(String nameEquipment) {
 		this.nameEquipment = nameEquipment;
 	}
-	public String getProprietaryEquipment() {
+	public Boolean getProprietaryEquipment() {
 		return proprietaryEquipment;
 	}
-	public void setProprietaryEquipment(String proprietaryEquipment) {
+	public void setProprietaryEquipment(Boolean proprietaryEquipment) {
 		this.proprietaryEquipment = proprietaryEquipment;
 	}
 	public String getAccessoriesEquipment() {
@@ -130,11 +136,12 @@ public class Equipment implements Serializable{
 	private String licenseEquipment;
 	private String localisationEquipment;
 	private String supervisorEquipment;
-	private String statutEquipment;
+	private String stateEquipment;
+	private String statusEquipment;
 	private String adressIpEquipment;
 	private String nameEquipment;
-	private String proprietaryEquipment;
 	private String AccessoriesEquipment;
+	private Boolean proprietaryEquipment;
 	private Date dateEquipment;
 	
 }
