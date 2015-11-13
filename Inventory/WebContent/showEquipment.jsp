@@ -5,6 +5,7 @@
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/base.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/showEquipment.css">
 <head>
 	<%@ include file="header.jsp"%>

@@ -1,7 +1,12 @@
-body{
-    padding:50px;
+header{
+	text-align: center;
+	padding:5px;
+}
+.navbar-form{
+    text-align: center;
 }
 
+/* part login */
 #login-dp{
     min-width: 250px;
     padding: 14px 14px 0;
@@ -20,21 +25,15 @@ body{
 #login-dp .form-group {
     margin-bottom: 10px;
 }
-.btn-fb{
+.btn-primary{
     color: #fff;
-    background-color:#3b5998;
+    background-color:#f0ad4e;
+    border-color: #eea236;
 }
-.btn-fb:hover{
+.btn-primary:hover{
     color: #fff;
-    background-color:#496ebc 
-}
-.btn-tw{
-    color: #fff;
-    background-color:#55acee;
-}
-.btn-tw:hover{
-    color: #fff;
-    background-color:#59b5fa;
+    background-color:#eea236;
+    border-color: #eea236;
 }
 @media(max-width:768px){
     #login-dp{

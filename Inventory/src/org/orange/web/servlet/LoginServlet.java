@@ -1,7 +1,6 @@
 package org.orange.web.servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -11,11 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.orange.metier.IUser;
-import org.orange.metier.ImplementationEquipment;
 import org.orange.metier.ImplementationUser;
-import org.orange.metier.bean.Equipment;
 import org.orange.metier.bean.User;
-import org.orange.web.model.EquipmentModel;
 import org.orange.web.model.UserModel;
 
 /**
@@ -63,14 +59,14 @@ public class LoginServlet extends HttpServlet {
 			modUser.setUser(currentUser);//store result in model
 			
 			if(currentUser==null){
-				//if password or login is empty
+				//if password or login is wrong
 				String message = "Wrong login or password";
 				request.setAttribute("message", message);
 				request.getRequestDispatcher("/home.jsp").forward(request, response);
 				
 			}else{		         
 				request.getSession().setAttribute("user", currentUser);
-				request.getRequestDispatcher("home.jsp").forward(request, response);
+				response.sendRedirect(".");
 			}
 			
 		}else {

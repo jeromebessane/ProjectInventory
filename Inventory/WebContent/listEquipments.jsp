@@ -4,8 +4,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/base.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/listEquipments.css">
 <head>
 <%@ include file="header.jsp"%>
 </head>
@@ -26,27 +27,33 @@
 								<th>Model</th>
 							</tr>
 						</thead>
-						<c:forEach items="${model.listEquips}" var="equip">
-							<tr onclick="this.form.submit();">					
-								<td>${equip.idEquipment}</td>
-								<td>${equip.typeEquipment}</td>
-								<td>${equip.constructorEquipment}</td>
-								<td>${equip.modelEquipment}</td>
-								<td><button type="submit" name="equip" value="${equip.idEquipment}">more</button></td>																			
-							</tr>
-						</c:forEach>
+						<tbody id="myTable">
+							<c:forEach items="${model.listEquips}" var="equip">
+								<tr onclick="this.form.submit();">					
+									<td>${equip.idEquipment}</td>
+									<td>${equip.typeEquipment}</td>
+									<td>${equip.constructorEquipment}</td>
+									<td>${equip.modelEquipment}</td>
+									<td><button class="btn btn-warning btn-sm" type="submit" name="equip" value="${equip.idEquipment}">More</button></td>																			
+								</tr>
+							</c:forEach>
+						</tbody>
 					</table>
 				</form>	
 			</div>
+			<div class="col-md-12 text-center">
+      			<ul class="pagination pagination-lg pager" id="myPager"></ul>
+      		</div>
 		</div>
 	</div>
 </body>
-<footer> </footer>
 
 <!-- jQuery library -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
 <!-- Latest compiled JavaScript -->
+<script
+	src="<%=request.getContextPath()%>/javascript/listEquipments.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 </html>
