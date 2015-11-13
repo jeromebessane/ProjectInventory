@@ -5,17 +5,21 @@
 <html>
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/header.css">
 	<head>
+		<title>SAS Inventory</title>
+		<header><img src="<%=request.getContextPath()%>/images/logo_OBS_noir.png" alt=""></header>
 		<nav class="navbar navbar-default">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
-		      <a class="navbar-brand" href="#">SAS Equipment</a>
+		      <a class="navbar-brand" href="#">SAS Inventory</a>
 		    </div>
 		    <div>
 		      <ul class="nav navbar-nav">
 		        <li class="active"><a href="<%=request.getContextPath()%>">Home</a></li>
 		        <li><a href="<%=request.getContextPath()%>/equipments">Equipments</a></li>
-		        <li><a href="<%=request.getContextPath()%>/add-equipment">Add</a></li> 
-		        <li><a href="#">Page 3</a></li> 
+		        	<% if(request.getSession().getAttribute("user") != null){ %>
+	   					<li><a href="<%=request.getContextPath()%>/add-equipment">Add</a></li> 
+			        	<li><a href="#">Page 3</a></li> 
+					<% } %> 
 		      </ul>
 		      
 		       <form class="navbar-form navbar-left" role="search" action="equipments" method="post">
@@ -56,7 +60,7 @@
 										 </form>
 									</div>
 									<div class="bottom text-center">
-										New here ? <a href="#"><b>Join Us</b></a>
+										New here ? <a href="#">More informations</a>
 									</div>
 							 </div>
 						</li>
@@ -80,7 +84,7 @@
 										 </form>
 									</div>
 									<div class="bottom text-center">
-										<a href="#"><b>Change password ?</b></a>
+										<a href="<%=request.getContextPath()%>/manage-login"><b>Manage login</b></a>
 									</div>
 							 </div>
 						</li>

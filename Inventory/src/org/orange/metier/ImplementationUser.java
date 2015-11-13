@@ -45,4 +45,10 @@ public class ImplementationUser implements IUser {
 		
 	}
 
+	@Override
+	public Boolean changeField(int idUser, String field) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -13,7 +13,7 @@
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
 						href="#collapseOne"><span
-						class="glyphicon glyphicon-folder-close"> </span>Constructor</a>
+						class="glyphicon glyphicon-folder-close"> </span> Constructor</a>
 				</h4>
 			</div>
 			<div id="collapseOne" class="panel-collapse collapse in">
@@ -37,7 +37,7 @@
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
 						href="#collapseTwo"><span
-						class="glyphicon glyphicon-folder-close"> </span>Type</a>
+						class="glyphicon glyphicon-folder-close"> </span> Type</a>
 				</h4>
 			</div>
 			<div id="collapseTwo" class="panel-collapse collapse in">
@@ -60,7 +60,7 @@
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
 						href="#collapseThree"><span
-						class="glyphicon glyphicon-folder-close"> </span>Status</a>
+						class="glyphicon glyphicon-folder-close"> </span> Status</a>
 				</h4>
 			</div>
 			<div id="collapseThree" class="panel-collapse collapse in">
@@ -83,7 +83,7 @@
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
 						href="#collapseFour"><span
-						class="glyphicon glyphicon-folder-close"> </span>Localisation</a>
+						class="glyphicon glyphicon-folder-close"> </span> Localisation</a>
 				</h4>
 			</div>
 			<div id="collapseFour" class="panel-collapse collapse in">

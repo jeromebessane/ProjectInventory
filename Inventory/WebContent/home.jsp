@@ -6,15 +6,15 @@
 <html>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/base.css">
 	<link rel="stylesheet" href="css/home.css">
 	<head>
 		<%@ include file="header.jsp" %>		
 	</head>
 	
 	<body>
-		<h2>Welcome to the Inventory !</h2>
 		<div class="container">
-			<div class="row">
+			<div class="row" id="displayType">
 				<c:forEach items="${modelHome.listTypes}" var="type">
 					<c:choose>
 						<c:when test="${type.equals('Router')}">
@@ -69,27 +69,30 @@
 				</c:forEach>
 			</div>
 		</div>
-		<h3>The Last five equipments</h3>
+		<h3 id="titleLastEquip">The Last five equipments</h3>
 		<div class="col-sm-12 col-md-12">
 			<div class="table-responsive">
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>id</th>
-							<th>Type</th>
-							<th>Constructor</th>
-							<th>Model</th>
-						</tr>
-					</thead>
-					<c:forEach items="${modelHome.listEquips}" var="equip">
-						<tr>
-							<td>${equip.idEquipment}</td>
-							<td>${equip.typeEquipment}</td>
-							<td>${equip.constructorEquipment}</td>
-							<td>${equip.modelEquipment}</td>
-						</tr>
-					</c:forEach>
-				</table>
+				<form action="equipments/show" method="post">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>id</th>
+								<th>Type</th>
+								<th>Constructor</th>
+								<th>Model</th>
+							</tr>
+						</thead>
+						<c:forEach items="${modelHome.listEquips}" var="equip">
+							<tr>
+								<td>${equip.idEquipment}</td>
+								<td>${equip.typeEquipment}</td>
+								<td>${equip.constructorEquipment}</td>
+								<td>${equip.modelEquipment}</td>
+								<td><button class="btn btn-warning btn-sm" type="submit" name="equip" value="${equip.idEquipment}">More</button></td>
+							</tr>
+						</c:forEach>
+					</table>
+				</form>
 			</div>
 		</div>
 	</body>

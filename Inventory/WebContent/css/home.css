@@ -21,40 +21,30 @@
 	padding-bottom: 75px;
 }
 
-body {
-  padding-top: 10px;
+#displayType img {
+	border: 2px solid #F60;
+	border-radius: 10px;
 }
 
-h2 {
+#titleLastEquip {
+	color: #F60;
 	text-align: center;
-	color: #FF6600;
-	padding-bottom: 20px;
-	text-decoration: underline;
-}
-
-h3 {
-	color: #FF6600;
-	text-align: center;
-	border: 2px solid #FF6600;
+	border: 2px solid #F60;
+	border-radius: 10px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
 
-img {
-	border: 2px solid #FF6600;
+#displayType { 
+     text-align: center;
 }
 
-a {
-	color: #FF6600;
-}
-
-th {
-	text-align: center;
-}
-
-[class*="col-"], footer {
-  /*line-height: 195px;*/
-  text-align: center;
+table {
   padding-top: 10px;
   min-height: 100%;
 }
+
+table th, table td {
+  text-align: center;
+}
+
