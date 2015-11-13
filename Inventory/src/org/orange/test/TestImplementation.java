@@ -13,6 +13,7 @@ public class TestImplementation {
 
 	public static void main(String[] args) {
 		
+		testGetAddEquipments();
 		//testGetEquipmentsWithFilter();
 		//testGetTypesEquipments();
 		//testGetLastEquipments();
@@ -98,7 +99,26 @@ public class TestImplementation {
 		List<Equipment> listEquips = impl.getTypesEquipments();
 		for(Equipment equip:listEquips){
 		System.out.println(equip.getTypeEquipment());
-		}	
+		}
+	}
+		
+	private static void testGetAddEquipments(){
+		ImplementationEquipment impl = new ImplementationEquipment();
+		Equipment equip = new Equipment();
+		equip.setTypeEquipment("toto1");
+		equip.setConstructorEquipment("toto2");
+		equip.setModelEquipment("toto3");
+		equip.setSnEquipment("toto4");
+		equip.setPnEquipment("toto5");
+		equip.setLocalisationEquipment("toto6");
+		equip.setSupervisorEquipment("toto7");
+		equip.setAdressIpEquipment("toto8");
+		equip.setNameEquipment("toto9");
+		equip.setLicenseEquipment("toto10");
+		equip.setAccessoriesEquipment("toto11");
+		equip.setStateEquipment("toto12");
+		equip.setStatusEquipment("toto13");
+		System.out.println(impl.addEquipment(equip));
 	}
 }
 

@@ -9,12 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.orange.metier.IEquipment;
+import org.orange.metier.ImplementationEquipment;
+import org.orange.metier.bean.Equipment;
+import org.orange.web.model.AddEquipementModel;
+
 /**
  * Servlet implementation class AddEquipmentServlet
  */
 @WebServlet("/AddEquipmentServlet")
 public class AddEquipmentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private IEquipment implEquip;
+	private AddEquipementModel model;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -28,7 +35,8 @@ public class AddEquipmentServlet extends HttpServlet {
 	 * @see Servlet#init(ServletConfig)
 	 */
 	public void init(ServletConfig config) throws ServletException {
-		
+		implEquip= new ImplementationEquipment();
+		model = new AddEquipementModel();
 	}
 
 	/**
@@ -43,7 +51,35 @@ public class AddEquipmentServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub		
+		// TODO Auto-generated method stub
+		Equipment equip = new Equipment();
+		equip.setTypeEquipment(request.getParameter("type"));
+		equip.setConstructorEquipment(request.getParameter("constructor"));
+		equip.setModelEquipment(request.getParameter("model"));
+		equip.setSnEquipment(request.getParameter("serial_number"));
+		equip.setPnEquipment(request.getParameter("part_number"));
+		equip.setLocalisationEquipment(request.getParameter("localisation"));
+		equip.setSupervisorEquipment(request.getParameter("supervisor"));
+		equip.setAdressIpEquipment(request.getParameter("adress_ip"));
+		equip.setNameEquipment(request.getParameter("name"));
+		equip.setLicenseEquipment(request.getParameter("licence"));
+		equip.setAccessoriesEquipment(request.getParameter("accessories"));
+		equip.setStateEquipment(request.getParameter("condition"));
+		equip.setStatusEquipment(request.getParameter("status"));
+		if (request.getParameter("proprietary").equals("false")) {
+			equip.setProprietaryEquipment(false);
+		}
+		else {
+			equip.setProprietaryEquipment(true);
+		}
+		Boolean bool = implEquip.addEquipment(equip);
+		model.setEquip(equip);
+		if (bool){
+			request.getRequestDispatcher("home.jsp").forward(request, response);
+		}
+		else{
+			request.getRequestDispatcher("/addEquipment.jsp").forward(request, response);
+		}
 	}
 
 }
