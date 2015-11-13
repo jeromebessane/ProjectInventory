@@ -42,8 +42,43 @@ public class ImplementationEquipment implements IEquipment{
 	}
 
 	@Override
-	public void addEquipment(Equipment equip) {	
-		
+	public Boolean addEquipment(Equipment equip) {
+		Boolean bool = true;
+		int prop;
+		if (equip.getProprietaryEquipment() == true) {
+			prop = 1;
+		} else {
+			prop = 0;
+		}
+		Connection connection=SingletonConnection.getConnection();
+		try {
+			PreparedStatement prepStat = connection.prepareStatement
+					("INSERT INTO equipment"
+					+ "(Type,Constructor,Model,Serial_Number,Part_Number,Localisation,Supervisor,Adress_Ip,Name,License,Accessories,State,Status,Proprietary,Date)"
+					+ "VALUES"
+					+ "(\""+equip.getTypeEquipment()
+					+"\",\""+equip.getConstructorEquipment()
+					+"\",\""+equip.getModelEquipment()
+					+"\",\""+equip.getSnEquipment()
+					+"\",\""+equip.getPnEquipment()
+					+"\",\""+equip.getLocalisationEquipment()
+					+"\",\""+equip.getSupervisorEquipment()
+					+"\",\""+equip.getAdressIpEquipment()
+					+"\",\""+equip.getNameEquipment()
+					+"\",\""+equip.getLicenseEquipment()
+					+"\",\""+equip.getAccessoriesEquipment()
+					+"\",\""+equip.getStateEquipment()
+					+"\",\""+equip.getStatusEquipment()
+					+"\",\""+prop
+					+"\",NOW());");
+			
+			prepStat.executeUpdate();//recovery results
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			bool = false;
+		}
+		return bool;
 	}
 
 	@Override

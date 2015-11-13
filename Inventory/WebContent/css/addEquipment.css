@@ -1,0 +1,33 @@
+/* Général ------------------------------------------------------------------------------------- */
+
+.equipmentbox {
+    background-color:#ffffff;
+	padding:10px;
+	margin:5px 0;
+    border: 1px solid #cfcfcf;
+    -moz-box-shadow: 2px 2px 4px 0px #cfcfcf;
+    -webkit-box-shadow: 2px 2px 4px 0px #cfcfcf;
+    -o-box-shadow: 2px 2px 4px 0px #cfcfcf;
+    box-shadow: 2px 2px 4px 0px #cfcfcf;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=134, Strength=4);
+}
+
+form label {
+    float: left;
+    width: 200px;
+    margin: 3px 0px 0px 0px;
+}
+
+form input {
+    margin: 3px 3px 0px 0px;
+    border: 1px #999 solid;
+    display: inline-block;
+}
+
+.btn-warning{
+	float:right;
+}
+
+#proprietary {
+	display: inline;
+}
