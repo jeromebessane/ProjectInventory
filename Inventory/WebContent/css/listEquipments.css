@@ -1,0 +1,26 @@
+/* for table */
+table th, table td {
+  	text-align: center;
+}
+table th {
+  	color:#F60;
+}
+
+/* for pagination */
+.pagination > li > a{
+	color:#f0ad4e;
+	background-color:#FFF;
+}
+.pagination > .active > a{
+	color:#FFF;
+	background-color:#f0ad4e;
+	border-color:#eea236; 	
+}
+.pagination > li > a:hover{
+	color:#f0ad4e;
+}
+.pagination > .active > a:hover{
+	color:#FFF;
+	background-color:#eea236;
+	border-color:#eea236; 	
+}
