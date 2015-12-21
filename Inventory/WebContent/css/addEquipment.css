@@ -1,15 +1,33 @@
 /* Général ------------------------------------------------------------------------------------- */
 
 .equipmentbox {
-    background-color:#ffffff;
-	padding:10px;
-	margin:5px 0;
+	font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	margin: 5px 0;
     border: 1px solid #cfcfcf;
-    -moz-box-shadow: 2px 2px 4px 0px #cfcfcf;
-    -webkit-box-shadow: 2px 2px 4px 0px #cfcfcf;
-    -o-box-shadow: 2px 2px 4px 0px #cfcfcf;
-    box-shadow: 2px 2px 4px 0px #cfcfcf;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=134, Strength=4);
+}
+
+.full-panel{
+	margin-bottom: 0px;
+}
+
+h3.title {
+	color: #F60;
+	padding-left: 65px;
+}
+
+*:focus {outline: none;}
+/*Fields of the form------------------------------------------------------------------------------------------------------------------------------------------*/
+form ul {
+	list-style-type: none;
+    list-style-position: outside;
+    margin: 0px;
+    padding: 0px;
+}
+
+form li {
+	padding: 8px; 
+    border-bottom: 1px solid #eee;
+    position: relative;
 }
 
 form label {
@@ -20,14 +38,67 @@ form label {
 
 form input {
     margin: 3px 3px 0px 0px;
-    border: 1px #999 solid;
-    display: inline-block;
+    border: 1px #aaa solid;
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius: 2px;
 }
 
-.btn-warning{
+form input:focus {
+	background: #fff; 
+    border:1px solid #F60; 
+    box-shadow: 0 0 3px #aaa; 
+}
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*Customisation browse file ----------------------------------------------------------------------------------------------------------------------------------*/
+.inputimage {
+	display: inline-block;
+	position: relative;
+	color: #fef4e9;
+	cursor: pointer;
+	padding-top: 20px;
+	padding-left: 80px;
+	padding-bottom: 0px;
+}
+
+.inputimage input[name="image"]{
+	visibility: hidden;
+	width:10px;
+}
+
+.inputimage:before {
+	content: 'Choose Image';
+	color: #fef4e9;
+	border: solid 1px #da7c0c;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+	background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+	border-radius: 25px;
+
+}
+
+.inputimage:hover:before {
+	background: #f47c20;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+	background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+
+.inputimage:active:before {
+	color: #fcd3a5;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+	background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+}
+
+.btn-warning {
 	float:right;
 }
+/*----------------------------------------------------------------------------------------------------------------------------*/
 
-#proprietary {
-	display: inline;
+.foot-panel {
+	background-color: #FFFFFF;
+	margin-top: -30px;
+	margin-bottom: 35px;
 }

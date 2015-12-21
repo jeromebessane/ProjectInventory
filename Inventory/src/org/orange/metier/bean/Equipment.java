@@ -13,7 +13,9 @@ public class Equipment {
 			String supervisorEquipment, String stateEquipment,
 			String statusEquipment, String adressIpEquipment, 
 			String nameEquipment, String accessoriesEquipment,
-			Boolean proprietaryEquipment, Date dateEquipment) {
+			Boolean proprietaryEquipment, Date dateEquipment,
+			String imageEquipment) {
+		
 		super();
 		this.typeEquipment = typeEquipment;
 		this.constructorEquipment = constructorEquipment;
@@ -30,6 +32,7 @@ public class Equipment {
 		this.proprietaryEquipment = proprietaryEquipment;
 		AccessoriesEquipment = accessoriesEquipment;
 		this.dateEquipment = dateEquipment;
+		this.setImageEquipment(imageEquipment);
 	}
 	public Long getIdEquipment() {
 		return idEquipment;
@@ -112,8 +115,8 @@ public class Equipment {
 	public Boolean getProprietaryEquipment() {
 		return proprietaryEquipment;
 	}
-	public void setProprietaryEquipment(Boolean proprietaryEquipment) {
-		this.proprietaryEquipment = proprietaryEquipment;
+	public void setProprietaryEquipment(boolean b) {
+		this.proprietaryEquipment = b;
 	}
 	public String getAccessoriesEquipment() {
 		return AccessoriesEquipment;
@@ -126,6 +129,12 @@ public class Equipment {
 	}
 	public void setDateEquipment(Date dateEquipment) {
 		this.dateEquipment = dateEquipment;
+	}
+	public String getImageEquipment() {
+		return imageEquipment;
+	}
+	public void setImageEquipment(String imageEquipment) {
+		this.imageEquipment = imageEquipment;
 	}
 	private Long idEquipment;
 	private String typeEquipment;
@@ -143,5 +152,5 @@ public class Equipment {
 	private String AccessoriesEquipment;
 	private Boolean proprietaryEquipment;
 	private Date dateEquipment;
-	
+	private String imageEquipment;
 }

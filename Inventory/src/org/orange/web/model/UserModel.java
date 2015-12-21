@@ -7,6 +7,7 @@ public class UserModel {
 	private String login;
 	private String password;
 	private User user;
+	private User userData;
 	
 	public String getLogin() {
 		return login;
@@ -25,6 +26,12 @@ public class UserModel {
 	}
 	public void setUser(User user) {
 		this.user = user;
+	}
+	public User getUserData() {
+		return userData;
+	}
+	public void setUserData(User userData) {
+		this.userData = userData;
 	}	
 
 }

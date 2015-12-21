@@ -1,0 +1,19 @@
+h3.manage{
+	color: #F60;
+	padding-left: 55px; 
+}
+
+h5.welcome{
+	font-size: 17px;
+	padding-bottom: 15px;
+}
+
+i.login{
+	color: #F60;
+}
+
+li.listData{
+	list-style-type:none;
+	padding-left: 15px;
+	font-family: "Lucida Sans Unicode", ""Lucida Grande", sans-serif;
+}

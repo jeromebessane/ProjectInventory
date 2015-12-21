@@ -11,9 +11,11 @@ import org.orange.metier.bean.User;
 
 public class TestImplementation {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
 		
-		testGetAddEquipments();
+		testcheckField();
+		//testgetDataUser();
+		//testGetAddEquipments();
 		//testGetEquipmentsWithFilter();
 		//testGetTypesEquipments();
 		//testGetLastEquipments();
@@ -119,6 +121,27 @@ public class TestImplementation {
 		equip.setStateEquipment("toto12");
 		equip.setStatusEquipment("toto13");
 		System.out.println(impl.addEquipment(equip));
+	}
+	
+	private static void testgetDataUser(){
+		ImplementationUser impl = new ImplementationUser();
+		User user = impl.getDataUser(2);
+		System.out.println("Petit test :");
+		if(user!=null){
+			System.out.println(user.getFirstName());
+			System.out.println(user.getLastName());
+			System.out.println(user.getPassword());
+			System.out.println(user.getEmail());
+			System.out.println(user.getLogin());
+		}
+	}
+	
+	private static void testcheckField(){
+		ImplementationUser impl = new ImplementationUser();
+		String field="email";
+		String data="test@test";
+		int equal = impl.checkField(field, data);
+		System.out.println("The result of the test is: " + equal);
 	}
 }
 

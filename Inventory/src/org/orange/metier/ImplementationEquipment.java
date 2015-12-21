@@ -54,7 +54,7 @@ public class ImplementationEquipment implements IEquipment{
 		try {
 			PreparedStatement prepStat = connection.prepareStatement
 					("INSERT INTO equipment"
-					+ "(Type,Constructor,Model,Serial_Number,Part_Number,Localisation,Supervisor,Adress_Ip,Name,License,Accessories,State,Status,Proprietary,Date)"
+					+ "(Type,Constructor,Model,Serial_Number,Part_Number,Localisation,Supervisor,Adress_Ip,Name,License,Accessories,State,Status,Proprietary,View,Date)"
 					+ "VALUES"
 					+ "(\""+equip.getTypeEquipment()
 					+"\",\""+equip.getConstructorEquipment()
@@ -70,8 +70,8 @@ public class ImplementationEquipment implements IEquipment{
 					+"\",\""+equip.getStateEquipment()
 					+"\",\""+equip.getStatusEquipment()
 					+"\",\""+prop
+					+"\",\""+equip.getImageEquipment()
 					+"\",NOW());");
-			
 			prepStat.executeUpdate();//recovery results
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -265,5 +265,67 @@ public class ImplementationEquipment implements IEquipment{
 		Set<Equipment> EpureList = new HashSet<Equipment>(tmp_listTypes);
 		List<Equipment> listTypes = new ArrayList<Equipment>(EpureList);
 		return listTypes;//return list equipments
+	}
+	
+	public Equipment getEquipmentWithParameter(String parameter) {
+		
+		Equipment equip=new Equipment();
+		Connection connection=SingletonConnection.getConnection();
+		
+		try {
+			PreparedStatement prepStat = connection.prepareStatement
+					("SELECT DISTINCT \""+parameter+"\" FROM equipment;");
+			
+			ResultSet resSet = prepStat.executeQuery();//recovery results
+			//for each line create one equipment
+			while(resSet.next()){
+				switch(parameter) {
+					case "type":
+						equip.setTypeEquipment(resSet.getString("Type"));
+						break;
+					case "model":
+						equip.setModelEquipment(resSet.getString("Model"));
+						break;
+					case "constructor":	
+						equip.setConstructorEquipment(resSet.getString("Constructor"));
+						break;
+					case "serial_number":	
+						equip.setSnEquipment(resSet.getString("Serial_Number"));
+						break;
+					case "part_number":	
+						equip.setPnEquipment(resSet.getString("Part_Number"));
+						break;
+					case "localisation":	
+						equip.setLocalisationEquipment(resSet.getString("Localisation"));
+						break;
+					case "supervisor":	
+						equip.setSupervisorEquipment(resSet.getString("Supervisor"));
+						break;
+					case "adress_ip":
+						equip.setAdressIpEquipment(resSet.getString("Adress_Ip"));
+						break;
+					case "name":	
+						equip.setNameEquipment(resSet.getString("Name"));
+						break;
+					case "license":	
+						equip.setLicenseEquipment(resSet.getString("License"));
+						break;
+					case "accessories":	
+						equip.setAccessoriesEquipment(resSet.getString("Accessories"));
+						break;
+					case "condition":	
+						equip.setStateEquipment(resSet.getString("State"));
+						break;
+					case "status":	
+						equip.setStatusEquipment(resSet.getString("Status"));
+						break;
+				}
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return equip;//return list equipments
 	}
 }

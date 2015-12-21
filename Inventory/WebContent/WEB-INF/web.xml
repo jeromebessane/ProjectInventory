@@ -13,12 +13,12 @@
     <url-pattern>/equipments</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>fPasswordServlet</servlet-name>
-    <servlet-class>org.orange.web.servlet.ForgetPasswordServlet</servlet-class>
+    <servlet-name>forgotPasswordServlet</servlet-name>
+    <servlet-class>org.orange.web.servlet.ForgotPasswordServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>fPasswordServlet</servlet-name>
-    <url-pattern>/forget-password</url-pattern>
+    <servlet-name>forgotPasswordServlet</servlet-name>
+    <url-pattern>/forgot-password</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>showEquipmentServlet</servlet-name>

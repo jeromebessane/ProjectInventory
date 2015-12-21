@@ -6,88 +6,113 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/base.css">
-<link rel="stylesheet" href="css/addEquipment.css">	
+<link rel="stylesheet" href="css/addEquipment.css">
 <head>
 	<%@ include file="header.jsp"%>
-    <head>
-    	<link type="text/css" rel="stylesheet" href=".css" />
-	</head>
+</head>
 <body>
-<div class="equipmentbox">
-<div class="panel panel-default">
-<div class="panel-body">
-	<form method="post" action="AddEquipmentServlet">
-			<label for="type">Type:</label>
-			<input type="text" id="type" name="type" value="">
-			<br />
+	<div class="equipmentbox">
+		<div class="panel panel-default full-panel">
+			<div class="panel-heading">
+				<h3 class="title">Add equipment</h3>
+			</div>
+			<div class="panel-body">
 			
-			<label for="constructor">Constructor:</label>
-			<input type="text" id="constructor" name="constructor" value="">
-			<br />
-			 
-			<label for="model">Model:</label>
-			<input type="text" id="model" name="model" value="">
-			<br />
-			 
-			<label for="serial_number">Serial_Number:</label>
-			<input type="text" id="serial_number" name="serial_number" value="">
-			<br />
-			 
-			<label for="part_number">Part_Number:</label>
-			<input type="text" id="part_number" name="part_number" value="">
-			<br />
+				<form method="post" action="AddEquipmentServlet" encType="multipart/form-data" name="equip_form">
+					<ul>
+						<li>
+							<label for="type">Type:</label>
+							<input type="text" id="type" name="type" value="" >
+						</li>
 			
-			<label for="localisation">Localisation:</label>
-			<input type="text" id="localisation" name="localisation" value="">
-			<br />
-			 
-			<label for="supervisor">Supervisor:</label>
-			<input type="text" id="supervisor" name="supervisor" value="">
-			<br />
-			 
-			<label for="adress_ip">Adress_Ip:</label>
-			<input type="text" id="adress_ip" name="adress_ip" value="">
-			<br />
-			 
-			<label for="name">Name:</label>
-			<input type="text" id="name" name="name" value="">
-			<br />
-			 
-			<label for="licence">License:</label>
-			<input type="text" id="licence" name="licence" value="">
-			<br />
-			 
-			<label for="accessories">Accessories:</label>
-			<input type="text" id="accessories" name="accessories" value="">
-			<br />
-			 
-			<label for="condition">Condition:</label>
-			<input type="text" id="condition" name="condition" value="">
-			<br />
-			 
-			<label for="status">Status:</label>
-			<input type="text" id="status" name="status" value="">
-			<br />
-			 
-			<label for="proprietary">Proprietary:</label>
-			<select name="proprietary" id="proprietary">
-				<option value="true">Yes</option>
-				<option value="false">No</option>
-			</select>
-			<br />
-
-            <input type="submit" value="Add" class="btn btn-warning btm-sm"/>
-			<br />
-	</form>
-	</div>
-	</div>
+						<li>
+							<label for="constructor">Constructor:</label>
+							<input type="text" id="constructor" name="constructor" value="">
+			 			</li>
+			 		
+			 			<li>
+							<label for="model">Model:</label>
+							<input type="text" id="model" name="model" value="">
+			 			</li>
+			 		
+			 			<li>
+							<label for="serial_number">Serial_Number:</label>
+							<input type="text" id="serial_number" name="serial_number" value="">
+			 			</li>
+			 		
+			 			<li>
+							<label for="part_number">Part_Number:</label>
+							<input type="text" id="part_number" name="part_number" value="">
+						</li>
+					
+						<li>
+							<label for="localisation">Localisation:</label>
+							<input type="text" id="localisation" name="localisation" value="">
+			 			</li>
+			 		
+			 			<li>
+							<label for="supervisor">Supervisor:</label>
+							<input type="text" id="supervisor" name="supervisor" value="">
+			 			</li>
+			 		
+			 			<li>
+							<label for="adress_ip">IP_Address:</label>
+							<input type="text" id="adress_ip" name="adress_ip" value="">
+			 			</li>
+			 		
+			 			<li>
+							<label for="name">Name:</label>
+							<input type="text" id="name" name="name" value="">
+			 			</li>
+			 		
+			 			<li>
+							<label for="licence">License:</label>
+							<input type="text" id="licence" name="licence" value="">
+			 			</li>
+			 		
+			 			<li>
+							<label for="accessories">Accessories:</label>
+							<input type="text" id="accessories" name="accessories" value="">
+			 			</li>
+			 		
+			 			<li>
+							<label for="condition">Condition:</label>
+							<input type="text" id="condition" name="condition" value="">
+			 			</li>
+			 		
+			 			<li>
+							<label for="status">Status:</label>
+							<input type="text" id="status" name="status" value="">
+			 			</li>
+			 		
+			 			<li>
+							<label for="proprietary" >Owner:</label>
+							<select name="proprietary" id="proprietary">
+								<option value="false"></option>
+								<option value="true">Yes</option>
+								<option value="false">No</option>
+							</select>
+						</li>
+					</ul>					
+					<label class="inputimage">
+						<input type="file" id="image" name="image" value=""/>
+					</label>
+				</div>
+				<div class="panel-footer foot-panel">
+            		<input type="submit" value="Add" class="btn btn-warning btm-sm" id="button"/>
+            	</div>
+			</form>
+		</div>
 	</div>
 </body>
 
-<!-- jQuery library -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
 <!-- Latest compiled JavaScript -->
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+<script 
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>	
+<script
+	src="<%=request.getContextPath()%>/javascript/auto.js"></script>  
 </html>

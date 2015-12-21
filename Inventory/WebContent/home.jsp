@@ -19,49 +19,49 @@
 					<c:choose>
 						<c:when test="${type.equals('Router')}">
 							<div class="col-lg-3 col-lg-offset-1">
-								<a href="#"><img src="http://image.noelshack.com/fichiers/2015/45/1446563442-router.png" class="img-rounded"></a>	
+								<a href="#"><img src="<%=request.getContextPath()%>/images/router.png" class="img-rounded"></a>	
 								<a href="#">Router</a>
 							</div>
 						</c:when>
 						<c:when test="${type.equals('Switch')}">
 							<div class="col-lg-3 col-lg-offset-1">
-								<a href="#"><img src="http://image.noelshack.com/fichiers/2015/45/1446562194-switch.png" class="img-rounded"></a>
+								<a href="#"><img src="<%=request.getContextPath()%>/images/switch.png" class="img-rounded"></a>
 								<a href="#">Switch</a>
 							</div>
 						</c:when>
 						<c:when test="${type.equals('Firewall')}">
 							<div class="col-lg-3 col-lg-offset-1">
-								<a href="#"><img src="http://image.noelshack.com/fichiers/2015/45/1446563448-firewall.png" class="img-rounded"></a>
+								<a href="#"><img src="<%=request.getContextPath()%>/images/firewall.png" class="img-rounded"></a>
 								<a href="#">Firewall</a>
 							</div>
 						</c:when>
-						<c:when test="${type.equals('Telephone IP')}">
+						<c:when test="${type.equals('IP Phone')}">
 							<div class="col-lg-3 col-lg-offset-1">
-								<a href="#"><img src="http://image.noelshack.com/fichiers/2015/45/1446563457-visio-conferencing.png" class="img-rounded"></a>
+								<a href="#"><img src="<%=request.getContextPath()%>/images/visio_conferencing.png" class="img-rounded"></a>
 								<a href="#">IP Phone</a>
 							</div>
 						</c:when>
 						<c:when test="${type.equals('Server')}">
 							<div class="col-lg-3 col-lg-offset-1">						
-								<a href="#"><img src="http://image.noelshack.com/fichiers/2015/45/1446563469-server.png" class="img-rounded"></a>
+								<a href="#"><img src="<%=request.getContextPath()%>/images/server.png" class="img-rounded"></a>
 								<a href="#">Server</a>
 							</div>
 						</c:when>
 						<c:when test="${type.equals('Video Conferencing')}">
 							<div class="col-lg-3 col-lg-offset-1">
-								<a href="#"><img src="http://image.noelshack.com/fichiers/2015/45/1446563573-ip-phone.png" class="img-rounded"></a>
+								<a href="#"><img src="<%=request.getContextPath()%>/images/ip_phone.png" class="img-rounded"></a>
 								<a href="#">Video Conferencing</a>
 							</div>
 						</c:when>
 						<c:when test="${type.equals('Computer')}">
 							<div class="col-lg-3 col-lg-offset-1">
-								<a href="#"><img src="http://image.noelshack.com/fichiers/2015/45/1446563493-computer.png" class="img-rounded"></a>
+								<a href="#"><img src="<%=request.getContextPath()%>/images/computer.png" class="img-rounded"></a>
 								<a href="#">Computer</a>
 							</div>
 						</c:when>
 						<c:otherwise>
 							<div class="col-lg-3 col-lg-offset-1">
-								<a href="#"><img src="http://image.noelshack.com/fichiers/2015/45/1446823660-c-hosting.gif" class="img-rounded"></a>
+								<a href="#"><img src="<%=request.getContextPath()%>/images/c-hosting.gif" class="img-rounded"></a>
 								<a href="#">${type}</a>
 							</div>
 						</c:otherwise>

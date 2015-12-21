@@ -1,0 +1,11 @@
+$("#constructor").autocomplete("");
+$("#model").autocomplete("");
+$("#serial_number").autocomplete("");
+$("#part_number").autocomplete("");
+$("#localisation").autocomplete("");
+$("#supervisor").autocomplete("");
+$("#adress_ip").autocomplete("");
+$("#name").autocomplete("");
+$("#licence").autocomplete("");
+$("#condition").autocomplete("");
+$("#status").autocomplete("");

@@ -47,7 +47,7 @@
 												<div class="form-group">
 													 <label class="sr-only">Password</label>
 													 <input type="password" name="password" class="form-control" placeholder="Password" required>
-		                                             <div class="help-block text-right"><a href="<%=request.getContextPath()%>/forget-password">Forget the password ?</a></div>
+		                                             <div class="help-block text-right"><a href="<%=request.getContextPath()%>/forgot-password">Forgot the password ?</a></div>
 												</div>
 												<div class="form-group">
 													 <button type="submit" class="btn btn-primary btn-block" value="connexion">Sign in</button>
