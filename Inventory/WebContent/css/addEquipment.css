@@ -1,21 +1,33 @@
 /* Général ------------------------------------------------------------------------------------- */
 
 .equipmentbox {
-	font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
-	margin: 5px 0;
+    background-color:#ffffff;
+	padding:10px;
+	margin:5px 0;
     border: 1px solid #cfcfcf;
+    -moz-box-shadow: 2px 2px 4px 0px #cfcfcf;
+    -webkit-box-shadow: 2px 2px 4px 0px #cfcfcf;
+    -o-box-shadow: 2px 2px 4px 0px #cfcfcf;
+    box-shadow: 2px 2px 4px 0px #cfcfcf;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=134, Strength=4);
 }
 
-.full-panel{
-	margin-bottom: 0px;
-}
-
-h3.title {
+h3.titlePanel {
 	color: #F60;
-	padding-left: 65px;
 }
 
-*:focus {outline: none;}
+.btn-warning {
+	float:right;
+	margin-top:10px;
+}
+
+.footerbox {
+	border-top:1px solid #dadada;
+	padding-top:5px;
+	height:50px;
+}
+
+
 /*Fields of the form------------------------------------------------------------------------------------------------------------------------------------------*/
 form ul {
 	list-style-type: none;
@@ -39,14 +51,12 @@ form label {
 form input {
     margin: 3px 3px 0px 0px;
     border: 1px #aaa solid;
-    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
     border-radius: 2px;
 }
 
 form input:focus {
 	background: #fff; 
     border:1px solid #F60; 
-    box-shadow: 0 0 3px #aaa; 
 }
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -92,13 +102,4 @@ form input:focus {
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
 }
 
-.btn-warning {
-	float:right;
-}
-/*----------------------------------------------------------------------------------------------------------------------------*/
 
-.foot-panel {
-	background-color: #FFFFFF;
-	margin-top: -30px;
-	margin-bottom: 35px;
-}

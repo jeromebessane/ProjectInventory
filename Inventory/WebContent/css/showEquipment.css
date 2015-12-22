@@ -13,8 +13,19 @@
 .footerbox {
 	border-top:1px solid #dadada;
 	padding-top:5px;
+	height:50px;
 }
 
-.btn-warning{
+h3.titlePanel {
+	color: #F60;
+}
+
+.footerbox a{
+	margin:5px;
+}
+.returnButton{
+	float:left;
+}
+.rightButtons{
 	float:right;
 }

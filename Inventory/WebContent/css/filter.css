@@ -1,3 +1,9 @@
 .panel-heading a{
 	color: #F60;
 }
+
+.list-group-item {
+  overflow-y: scroll;
+  max-height: 200px;
+  width: 100%;
+  }

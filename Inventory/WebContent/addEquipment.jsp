@@ -12,13 +12,12 @@
 </head>
 <body>
 	<div class="equipmentbox">
-		<div class="panel panel-default full-panel">
+		<form method="post" action="AddEquipmentServlet" encType="multipart/form-data" name="equip_form">
+			<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="title">Add equipment</h3>
-			</div>
-			<div class="panel-body">
-			
-				<form method="post" action="AddEquipmentServlet" encType="multipart/form-data" name="equip_form">
+				<h3 class="titlePanel">Add equipment</h3>
+			</div>	
+				<div class="panel-body">
 					<ul>
 						<li>
 							<label for="type">Type:</label>
@@ -98,12 +97,12 @@
 						<input type="file" id="image" name="image" value=""/>
 					</label>
 				</div>
-				<div class="panel-footer foot-panel">
-            		<input type="submit" value="Add" class="btn btn-warning btm-sm" id="button"/>
-            	</div>
-			</form>
+				</div>
+				<div class="footerbox">
+            		<input type="submit" value="Add" class="btn btn-warning btm-sm" id="buttonAdd"/>
+            	</div>          		
+			</form>					
 		</div>
-	</div>
 </body>
 
 <!-- Latest compiled JavaScript -->
@@ -113,6 +112,5 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 <script type="text/javascript"
         src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>	
-<script
-	src="<%=request.getContextPath()%>/javascript/auto.js"></script>  
+<script src="<%=request.getContextPath()%>/javascript/auto.js"></script>  
 </html>

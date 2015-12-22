@@ -17,7 +17,6 @@
 				</h4>
 			</div>
 			<div id="collapseOne" class="panel-collapse collapse in">
-			
 				<ul class="list-group">
 					<li class="list-group-item">
 						<c:forEach items="${model.listFilter.get(0)}" var="filter">

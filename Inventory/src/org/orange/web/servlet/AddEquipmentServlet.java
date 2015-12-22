@@ -29,6 +29,8 @@ public class AddEquipmentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private IEquipment implEquip;
 	private AddEquipementModel model;
+	private static final String SAVE_DIR = "Images_equip"; // Directory on the website
+	private static final String CHAMP_IMAGE = "image"; // Nom class files (view)
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -50,12 +52,10 @@ public class AddEquipmentServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getSession().invalidate();
-		response.sendRedirect("addEquipment.jsp");
+		//request.getSession().invalidate();
+		//response.sendRedirect("addEquipment.jsp");
+		request.getRequestDispatcher("addEquipment.jsp").forward(request, response);
 	}
-
-	 private static final String SAVE_DIR = "Images_equip"; // Directory on the website
-	 private static final String CHAMP_IMAGE = "image"; // Nom class files (view)
 	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

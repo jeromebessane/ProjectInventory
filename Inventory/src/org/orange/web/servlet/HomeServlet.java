@@ -59,9 +59,8 @@ public class HomeServlet extends HttpServlet {
 		// Display nine pictures in the homepage
 		Iterator<String> it = tmp_listTypes.iterator();
 		List<String> listTypes = new ArrayList<String>();
-		for (int i = 0; it.hasNext() && i < 9; i++) {
+		for (int i = 0; i < 6; i++) {
 			listTypes.add(it.next());
-			i++;
 		}
 		model.setListTypes(listTypes);
 		//store model in request

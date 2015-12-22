@@ -14,6 +14,9 @@
 <body>
   	<div class="equipmentbox">
   		<div class="panel panel-default">
+  			<div class="panel-heading">
+				<h3 class="titlePanel">Equipment</h3>
+			</div>
   			<div class="panel-body">
   				<h5>Type: ${modelShowEquip.equipment.typeEquipment}</h5>
 				<h5>Constructor : ${modelShowEquip.equipment.constructorEquipment}</h5>
@@ -37,11 +40,11 @@
 	  		</div>
 		</div>				
 		<div class="footerbox">
-        	<div class="pull-right">
+        	<div class="rightButtons">
             	<a href="#" class="btn btn-warning btm-sm" role="button">Edit <span class="glyphicon glyphicon-cog"></span></a>
             	<a href="#" class="btn btn-success btm-sm" role="button">Loan <span class="glyphicon glyphicon-ok"></span></a>
             </div>
-            <div class="pricetext">
+            <div class="returnButton">
                	<a href="<%=request.getContextPath()%>/equipments" class="btn btn-warning btm-sm" role="button"><span class="glyphicon glyphicon-chevron-left"></span>Return</a>
             </div>     
     	</div>

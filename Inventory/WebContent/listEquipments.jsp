@@ -18,6 +18,7 @@
 		<div class="col-sm-10 col-md-10">
 			<div class="table-responsive">
 				<form action="equipments/show" method="post">
+					<div class="nbEquipments"><h3>Equipments : ${model.listEquips.size()}</h3></div>
 					<table class="table table-hover">
 						<thead>
 							<tr>

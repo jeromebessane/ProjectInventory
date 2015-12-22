@@ -10,6 +10,6 @@
 	<classpathentry kind="lib" path="C:/Users/Administrator/Downloads/mysql-connector-java-5.1.37/mysql-connector-java-5.1.37/mysql-connector-java-5.1.37-bin.jar"/>
 	<classpathentry kind="lib" path="C:/apache-tomcat-7.0.65/webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar"/>
 	<classpathentry kind="lib" path="C:/apache-tomcat-7.0.65/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/dcastillon/Downloads/javax.mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Downloads/javax-mail.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

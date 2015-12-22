@@ -18,7 +18,7 @@
 		        <li><a href="<%=request.getContextPath()%>/equipments">Equipments</a></li>
 		        	<% if(request.getSession().getAttribute("user") != null){ %>
 	   					<li><a href="<%=request.getContextPath()%>/add-equipment">Add</a></li> 
-			        	<li><a href="#">Page 3</a></li> 
+			        	<li><a href="#">Licenses</a></li> 
 					<% } %> 
 		      </ul>
 		      
