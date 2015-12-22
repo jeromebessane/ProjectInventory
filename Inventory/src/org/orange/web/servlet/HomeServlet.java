@@ -2,6 +2,7 @@ package org.orange.web.servlet;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.ServletConfig;
@@ -54,7 +55,14 @@ public class HomeServlet extends HttpServlet {
 		List<Equipment> listEquips = implEquip.getLastEquipments();//recovery results with metier part
 		model.setListEquips(listEquips);//store result in model
 		// for list types
-		List<String> listTypes = implFilter.getListField("Type");
+		List<String> tmp_listTypes = implFilter.getListField("Type");
+		// Display nine pictures in the homepage
+		Iterator<String> it = tmp_listTypes.iterator();
+		List<String> listTypes = new ArrayList<String>();
+		for (int i = 0; it.hasNext() && i < 9; i++) {
+			listTypes.add(it.next());
+			i++;
+		}
 		model.setListTypes(listTypes);
 		//store model in request
 		request.setAttribute("modelHome", model);//name model for the jsp
